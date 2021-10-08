@@ -1,0 +1,26 @@
+Inequality constraints
+With inequality constraints, the problem can be characterized in terms of the geometric optimality conditions, Fritz John conditions and Karush–Kuhn–Tucker conditions, under which simple problems may be solvable.
+
+Linear programming
+If the objective function and all of the hard constraints are linear and some hard constraints are inequalities, then the problem is a linear programming problem. This can be solved by the simplex method, which usually works in polynomial time in the problem size but is not guaranteed to, or by interior point methods which are guaranteed to work in polynomial time.
+
+Nonlinear programming
+If the objective function or some of the constraints are nonlinear, and some constraints are inequalities, then the problem is a nonlinear programming problem.
+
+Quadratic programming
+If all the hard constraints are linear and some are inequalities, but the objective function is quadratic, the problem is a quadratic programming problem. It is one type of nonlinear programming. It can still be solved in polynomial time by the ellipsoid method if the objective function is convex; otherwise the problem may be NP hard.
+
+KKT conditions
+Allowing inequality constraints, the KKT approach to nonlinear programming generalizes the method of Lagrange multipliers. It can be applied under differentiability and convexity.
+
+Branch and bound
+Constraint optimization can be solved by branch-and-bound algorithms. These are backtracking algorithms storing the cost of the best solution found during execution and using it to avoid part of the search. More precisely, whenever the algorithm encounters a partial solution that cannot be extended to form a solution of better cost than the stored best cost, the algorithm backtracks, instead of trying to extend this solution.
+
+Assuming that cost is to be minimized, the efficiency of these algorithms depends on how the cost that can be obtained from extending a partial solution is evaluated. Indeed, if the algorithm can backtrack from a partial solution, part of the search is skipped. The lower the estimated cost, the better the algorithm, as a lower estimated cost is more likely to be lower than the best cost of solution found so far.
+
+On the other hand, this estimated cost cannot be lower than the effective cost that can be obtained by extending the solution, as otherwise the algorithm could backtrack while a solution better than the best found so far exists. As a result, the algorithm requires an upper bound on the cost that can be obtained from extending a partial solution, and this upper bound should be as small as possible.
+
+A variation of this approach called Hansen's method uses interval methods.[4] It inherently implements rectangular constraints.
+
+First-choice bounding functions
+One way for evaluating this upper bound for a partial solution is to consider each soft constraint separately. For each soft constraint, the maximal possible value for any assignment to the unassigned variables is assumed. The sum of these values is an upper bound because the soft constraints cannot assume a higher value. It is exact because the maximal values of soft constraints may derive from different evaluations: a soft constraint may be maximal for {\displaystyle x=a}x=a while another constraint is maximal for {\displaystyle x=b}{\displaystyle x=b}.
